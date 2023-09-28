@@ -26,3 +26,23 @@ body {
   background: url(./assets/images/bg.png) no-repeat center center fixed;
   background-size: cover;
 }
+
+
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #313131;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #313131;
+  border-radius: 15px;
+}
