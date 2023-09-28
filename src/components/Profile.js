@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Profile(){
     return(
 		<>
-			<div className="hero glass rounded-2xl text-center md:text-start ">
+			<div className="hero glass rounded-2xl text-center md:text-start text-black">
 				<div className="hero-content flex-col md:flex-row">
 					<img src="https://avatars.githubusercontent.com/u/79706975?s=400&u=c00c412332196dfd5ba8075cb149d2d01c0e1fda&v=4" className="w-1/3 rounded-lg shadow-2xl" />
 					<div>

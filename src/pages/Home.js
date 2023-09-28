@@ -12,7 +12,7 @@ function Home(){
     
     return(
         <>
-            <div className="hero glass my-10 rounded-2xl text-start">
+            <div className="hero glass my-10 rounded-2xl text-start text-black">
                 <div className="hero-content">
                     <div className=" py-5">
                         <h1 className="text-lg font-bold"><i className="fa-solid fa-code"></i> | {"Dev. Stacks"}</h1>
