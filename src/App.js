@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, redirect } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import { config } from './config/config';
 import Home from './pages/Home';
@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation } from "react-router-dom";
 import Socials from './pages/Social';
+
 function App() {
 	const { pathname } = useLocation();
 
