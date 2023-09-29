@@ -26,14 +26,14 @@ function App() {
 							animate="animateState"
 							exit="exitState"
 							transition={{
-								duration: 0.5,
+								duration: 0.3,
 							}}
 							variants={{
 								initialState: {
-									opacity: 0,
+									opacity: 0, transform: "translateY(150px)",
 								},
 								animateState: {
-									opacity: 1,
+									opacity: 1, transform: 0,
 								},
 								exitState: {},
 							}}

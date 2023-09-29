@@ -14,7 +14,7 @@ function Home(){
         <>
             <div className="hero glass my-10 rounded-2xl text-start text-black">
                 <div className="hero-content">
-                    <div className=" py-5">
+                    <div className="py-5">
                         <h1 className="text-lg font-bold"><i className="fa-solid fa-code"></i> | {"Dev. Stacks"}</h1>
                         <ul>
                             <li className="py-2 text-sm font-thin">▪ Programming languages: JavaScript, HTML, CSS, SQL, JSX, Python, C++, EJS</li>
@@ -33,10 +33,13 @@ function Home(){
                             <li className="py-2 text-sm font-thin">▪ Fav Anime : 86, Spy X Family, Bloom into You, YourName ETC.</li>
                         </ul>
                         
-                        <div className="card card-side glass shadow-2xl mt-14 px-3 py-3">
-                            <figure><img src={`https://cdn.discordapp.com/avatars/${config.api.lanyard.discordUserId}/${userStatus.data?.discord_user.avatar}`} style={{borderRadius: "100%"}} alt="profile"/></figure>
-                            <div className="card-body">
-                                <h2 className="card-title">@{userStatus.data?.discord_user.username} #{userStatus.data?.discord_user.discriminator}</h2>
+                        <h1 className="text-lg mt-5 font-bold"><i className="fa-brands fa-discord"></i> | {"Discord Status"}</h1>
+                        <div className="card card-side glass shadow-2xl mt-3 px-10 py-1">
+                            <figure><img src={`https://cdn.discordapp.com/avatars/${config.api.lanyard.discordUserId}/${userStatus.data?.discord_user.avatar}`} style={{borderRadius: "100%", width: "6rem"}} alt="profile"/></figure>
+                            {/* <p className='my-auto'>+</p>
+                            <figure><img src={``} style={{borderRadius: "100%", width: "75%"}} alt="profile"/></figure> */}
+                            <div className="card-body text-center">
+                                <h2 className="font-bold text-xl">@{userStatus.data?.discord_user.username} #{userStatus.data?.discord_user.discriminator}</h2>
                                 <p>Status : <span className={userStatus.data?.discord_status === 'online' ? "text-success" : ""}>{userStatus.data?.discord_status}</span></p>
                             </div>
                         </div>
