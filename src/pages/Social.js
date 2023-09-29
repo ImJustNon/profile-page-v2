@@ -24,7 +24,7 @@ function Socials(){
         <div className="hero glass my-10 rounded-2xl text-center text-black">
             <div className="hero-content">
                 <div className="py-2 px-2">
-                    <h1 className='text-2xl text-start mb-5'>My Social Accounts</h1>
+                    <h1 className='text-2xl text-start mb-5'>{"<My Social Accounts />"}</h1>
                     <hr className='my-5'/>
                     {config.data.pages.social.buttons.map((data, i) =>(
                         <a 

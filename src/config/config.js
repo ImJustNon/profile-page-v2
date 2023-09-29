@@ -7,7 +7,7 @@ export const config = {
     data: {
         pages: {
             social: {
-                defaultClass: "btn btn-ghost btn-outline mx-1 my-1",
+                defaultClass: "btn btn-ghost btn-outline mx-1 my-1 text-black",
                 buttons: [
                     {
                         name: "Twitter",
