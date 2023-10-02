@@ -21,9 +21,9 @@ function Profile(){
 						<p className="py-3">I call myself a Dev. But I hate code. LOL.</p>
 						<p className="py-3">Currently studying at the Vocational Certificate at the Science-Based Technology Vocational College (Chonburi). Information Technology branch.</p>
 						<div className="text-center font-bold">
-							<Link to={"/"}    className={path === "/" ? "btn btn-ghost btn-active" : "btn btn-ghost"}><i className="fa-solid fa-house"></i> /Home</Link>
-							<Link to={"/project"} className={path === "/project" ? "btn btn-ghost btn-active" : "btn btn-ghost"}><i className="fa-solid fa-code"></i> /Project</Link>
-							<Link to={"/social"}  className={path === "/social" ? "btn btn-ghost btn-active" : "btn btn-ghost"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
+							<Link to={"/"}    className={path === "/" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-house"></i> /Home</Link>
+							<Link to={"/project"} className={path === "/project" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-code"></i> /Project</Link>
+							<Link to={"/social"}  className={path === "/social" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
 						</div>
 					</div>
 				</div>

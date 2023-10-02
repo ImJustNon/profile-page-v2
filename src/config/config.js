@@ -2,6 +2,9 @@ export const config = {
     api: {
         lanyard: {
             discordUserId: "708965153131200594",
+        },
+        nonlnwzaPortfolio: {
+            key: "idontknow",
         }
     },
     data: {
@@ -58,7 +61,14 @@ export const config = {
                         hoverClass: "btn btn-active btn-success mx-1 my-1 text-white",
                     },
                 ]
-            }
+            },
+            project: {
+                group: [
+                    "m3",
+                    "voc_cert_1",
+                    "voc_cert_2"
+                ],
+            },
         }
     }
 }

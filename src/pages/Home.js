@@ -1,14 +1,16 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { config } from '../config/config'
 
 function Home(){
     const [userStatus, setUserStatus] = useState([]);
 
-        
-    fetch(`https://api.lanyard.rest/v1/users/${config.api.lanyard.discordUserId}`).then(response => response.json()).then(response =>{
-        setUserStatus(response);
-        console.log(`Connected To Lanyard API : SUCCESS : ${Math.random()}`);
-    });
+    useEffect(() =>{
+        fetch(`https://api.lanyard.rest/v1/users/${config.api.lanyard.discordUserId}`).then(response => response.json()).then(response =>{
+            setUserStatus(response);
+            console.log(`Connected To Lanyard API : SUCCESS : ${Math.random()}`);
+        });
+    }, []);
+    
     
     return(
         <>
