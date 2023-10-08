@@ -44,7 +44,7 @@ export const config = {
                     },
                     {
                         name: "Email",
-                        url: "Im_Just_Non@hotmail.com",
+                        url: "mailto:Not.Non_006@outlook.sg",
                         iconClass: "fa-solid fa-at",
                         hoverClass: "btn btn-active btn-accent mx-1 my-1 text-white",
                     },
