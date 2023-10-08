@@ -4,7 +4,7 @@ export const config = {
             discordUserId: "708965153131200594",
         },
         nonlnwzaPortfolio: {
-            key: "idontknow",
+            key: process.env.REACT_APP_PORTFOLIO_API_KEY,
         }
     },
     data: {
