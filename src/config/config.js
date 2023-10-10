@@ -60,6 +60,14 @@ export const config = {
                         iconClass: "fa-brands fa-spotify",
                         hoverClass: "btn btn-active btn-success mx-1 my-1 text-white",
                     },
+                ],
+                webPageButton: [
+                    {
+                        name: "Spotify",
+                        url: "https://open.spotify.com/user/mvym46mna0nhjjvdt64l7m7uj",
+                        iconClass: "fa-brands fa-spotify",
+                        hoverClass: "btn btn-active btn-success mx-1 my-1 text-white",
+                    },
                 ]
             },
             project: {
