@@ -4,7 +4,7 @@ import spotify from '../assets/images/spotify.png';
 
 function Home(){
     const [userStatus, setUserStatus] = useState([]);
-    const [isUserStatusLoading, setIsUserStatusLoading] = useState(true);
+    const [isUserStatusLoaded, setIsUserStatusLoaded] = useState(false);
 
     useEffect(() =>{
         fetch(`https://api.lanyard.rest/v1/users/${config.api.lanyard.discordUserId}`).then(response => response.json()).then(response =>{
@@ -13,8 +13,8 @@ function Home(){
             console.log(`Connected To Lanyard API : SUCCESS : ${Math.random()}`);
 
             // update loading state
-            setTimeout(() =>setIsUserStatusLoading(false), 2000);
-        }, []);
+            setTimeout(() =>setIsUserStatusLoaded(true), 2000);
+        });
     });
     
     
@@ -44,24 +44,24 @@ function Home(){
                         <h1 className="text-lg mt-5 font-bold"><i className="fa-brands fa-discord"></i> | {"Discord Status"}</h1>
 
                         {/* Load success and show data */}
-                        <div className={`${isUserStatusLoading ? "hidden" : ""} card card-side glass shadow-2xl mt-3 px-10 py-1 text-center`}>
-                            <figure><img src={`https://cdn.discordapp.com/avatars/${config.api.lanyard.discordUserId}/${userStatus.data?.discord_user.avatar}`} style={{borderRadius: "100%", width: "6rem"}} alt="profile"/></figure>
+                        <div className={`card card-side glass shadow-2xl mt-3 px-10 py-1 text-center`}>
+                            <figure className='w-40 text-center'>
+                                {isUserStatusLoaded ? 
+                                    <img src={`https://cdn.discordapp.com/avatars/${config.api.lanyard.discordUserId}/${userStatus.data?.discord_user.avatar}`} className='w-2/3 rounded-full animate__animated animate__fadeIn' alt="profile"/>
+                                    :
+                                    <span className="loading loading-spinner loading-md"></span>
+                                }
+                                
+                            </figure>
                             <div className="card-body">
-                                <h2 className="font-bold text-xl">@{userStatus.data?.discord_user.username} #{userStatus.data?.discord_user.discriminator}</h2>
-                                <p>Status : <span className={userStatus.data?.discord_status === 'online' ? "text-success" : ""}>{userStatus.data?.discord_status}</span></p>
-                                <h2 className={`font-bold text-md ${userStatus.data?.activities.length !== 0 ? "" : "hidden"}`}>Activities</h2>
+                                <h2 className="font-bold text-xl">{isUserStatusLoaded ? <span className='animate__animated animate__fadeIn'>@{userStatus.data?.discord_user.username} #{userStatus.data?.discord_user.discriminator}</span> : <span>&nbsp;</span>}</h2>
+                                <p>{isUserStatusLoaded ? <span className={`animate__animated animate__fadeIn ${userStatus.data?.discord_status === 'online' ? "text-success" : ""}`}>{userStatus.data?.discord_status}</span> : <span>&nbsp;</span>}</p>
+                                {/* <h2 className={`font-bold text-md ${userStatus.data?.activities.length !== 0 ? "" : "hidden"}`}>Activities</h2>
                                 <p>{userStatus.data?.activities.map((activity, i) =>(
                                     <span key={i}>
                                         <span>{activity.name}</span> <br /> 
                                     </span>
-                                ))}</p>
-                            </div>
-                        </div>
-
-                        {/* Load not success show loading sign */}
-                        <div className={`${isUserStatusLoading ? "" : "hidden"} card card-side glass shadow-2xl mt-3 px-10 py-1 text-center`}>
-                            <div className="card-body">
-                                <span className="mx-auto loading loading-dots loading-lg"></span>
+                                ))}</p> */}
                             </div>
                         </div>
                     </div>
