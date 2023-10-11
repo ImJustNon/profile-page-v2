@@ -1,21 +1,40 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-
+import { config } from "../config/config";
 
 function Profile(){
 	const { pathname } = useLocation();
 
 	const [path, setPath] = useState("");
+	const [githubProfileURL, setGithubProfileURL] = useState("");
+	const [githubInfo, setGithubInfo] = useState({});
+	const [isLoaded, setIsLoaded] = useState(false);
 
 	useEffect(() =>{
 		setPath(pathname);
 	}, [pathname]);
 
+	useEffect(() =>{
+		fetch(`https://api.github.com/users/${config.api.github.username}`).then(response => response.json()).then(response =>{
+			setGithubProfileURL(response.avatar_url);
+			setGithubInfo(response);
+			setTimeout(() => setIsLoaded(true), 1500);
+		});
+	}, []);
+
     return(
 		<>
 			<div className="hero glass rounded-2xl text-center md:text-start text-black">
 				<div className="hero-content flex-col md:flex-row">
-					<img src="https://avatars.githubusercontent.com/u/79706975?s=400&u=c00c412332196dfd5ba8075cb149d2d01c0e1fda&v=4" className="w-1/3 rounded-lg shadow-2xl" />
+					{isLoaded ? 
+						<div className="w-2/3">
+							<img src={githubProfileURL} className="w-full rounded-lg shadow-2xl animate__animated animate__fadeIn" />
+						</div>
+						:
+						<div className="w-2/3 text-center">
+							<span className="loading loading-spinner loading-lg"></span>
+						</div>
+					}
 					<div>
 						<h1 className="text-2xl font-bold"><a href="https://github.com/ImJustNon" target="_blank">{"< Not._Non />"}</a></h1>
 						<p className="py-3">I call myself a Dev. But I hate code. LOL.</p>

@@ -5,6 +5,9 @@ export const config = {
         },
         nonlnwzaPortfolio: {
             key: process.env.REACT_APP_PORTFOLIO_API_KEY,
+        },
+        github: {
+            username: "imjustnon"
         }
     },
     data: {

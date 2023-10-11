@@ -20,37 +20,38 @@ function App() {
 	return (
 		<>	
 			{isMobile ? <></> : <Particle />} {/* not load Particles js if in mobile device <it take resource too much :) > */}
-
-			<div className='mt-28 mx-auto w-[30rem] md:w-[45rem] noselect'>
-				<Profile />
-				<AnimatePresence wait>
-					<motion.div 
-						key={pathname}
-						initial="initialState"
-						animate="animateState"
-						exit="exitState"
-						transition={{
-							duration: 0.3,
-						}}
-						variants={{
-							initialState: {
-								opacity: 0, transform: "translateY(150px)",
-							},
-							animateState: {
-								opacity: 1, transform: 0,
-							},
-							exitState: {},
-						}}
-					>
-						<Routes>
-							<Route path='/' element={<Home />} />
-							<Route path='/project' element={<Project />} />
-							<Route path='/social' element={<Socials />} />
-							<Route path='*' element={<NotFound />} />
-						</Routes>
-						<Footer />
-					</motion.div>
-				</AnimatePresence>
+			<div className='container mx-auto'>
+				<div className='mt-28 mx-auto w-[30rem] md:w-[45rem] noselect'>
+					<Profile />
+					<AnimatePresence wait>
+						<motion.div 
+							key={pathname}
+							initial="initialState"
+							animate="animateState"
+							exit="exitState"
+							transition={{
+								duration: 0.3,
+							}}
+							variants={{
+								initialState: {
+									opacity: 0, transform: "translateY(150px)",
+								},
+								animateState: {
+									opacity: 1, transform: 0,
+								},
+								exitState: {},
+							}}
+						>
+							<Routes>
+								<Route path='/' element={<Home />} />
+								<Route path='/project' element={<Project />} />
+								<Route path='/social' element={<Socials />} />
+								<Route path='*' element={<NotFound />} />
+							</Routes>
+							<Footer />
+						</motion.div>
+					</AnimatePresence>
+				</div>
 			</div>
 		</>
 		
