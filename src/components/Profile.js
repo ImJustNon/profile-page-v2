@@ -12,6 +12,18 @@ function Profile(){
 
 	useEffect(() =>{
 		setPath(pathname);
+
+		switch(pathname){
+			case "/":
+				document.title = `Not._Non | Home`;
+			break;
+			case "/project":
+				document.title = `Not._Non | Project`;
+			break;
+			case "/social":
+				document.title = `Not._Non | Social`;
+			break;
+		}
 	}, [pathname]);
 
 	useEffect(() =>{

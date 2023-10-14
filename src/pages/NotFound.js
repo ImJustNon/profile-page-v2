@@ -1,12 +1,6 @@
 import { useEffect } from "react";
 
-
 function NotFound(){
-
-    useEffect(() =>{
-        // document.title = "Not.Non | 404 NotFound"
-    }, []);
-
     return(
         <>
             <div className="hero glass my-10 rounded-2xl text-center text-black">
