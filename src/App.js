@@ -13,15 +13,25 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { Link, useLocation } from "react-router-dom";
 import Socials from './pages/Social';
 import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
+import SettingPageButton from './components/SettingPageButton';
+import Setting from './pages/Setting';
 
 function App() {
 	const { pathname } = useLocation();
+	const [enableParticles, setEnableParticles] = useState(false);
+
+	useEffect(() =>{
+		const enableParticles = localStorage.getItem("enable_particles");
+		setEnableParticles(enableParticles === "true" ? true : false);
+	}, []);
 
 	return (
 		<>	
-			{isMobile ? <></> : <Particle />} {/* not load Particles js if in mobile device <it take resource too much :) > */}
+			{!enableParticles ? <></> : <Particle />} {/* not load Particles js if in mobile device <it take resource too much :) > */}
+
+			<SettingPageButton />
 			<div className='container mx-auto'>
-				<div className='mt-28 mx-auto w-[30rem] md:w-[45rem] noselect'>
+				<div className='mt-14 mx-auto w-[30rem] md:w-[45rem] noselect'>
 					<Profile />
 					<AnimatePresence wait>
 						<motion.div 
@@ -46,6 +56,7 @@ function App() {
 								<Route path='/' element={<Home />} />
 								<Route path='/project' element={<Project />} />
 								<Route path='/social' element={<Socials />} />
+								<Route path='/setting' element={<Setting />} />
 								<Route path='*' element={<NotFound />} />
 							</Routes>
 							<Footer />
@@ -54,7 +65,6 @@ function App() {
 				</div>
 			</div>
 		</>
-		
 	);
 }
 
