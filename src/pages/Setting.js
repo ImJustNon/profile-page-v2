@@ -21,7 +21,7 @@ function Setting(){
             <div className="hero glass mt-10 rounded-2xl text-center text-black">
                 <div className="hero-content">
                     <div className="py-5">
-                        <h1 className='text-2xl text-center mb-5'>{"<Setting />"}</h1>
+                        <h1 className='text-2xl text-center mb-5'>{"<Settings />"}</h1>
                         <hr className='my-5'/>
                         
                         <div className="card w-96 glass text-black">
