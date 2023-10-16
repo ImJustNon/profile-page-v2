@@ -3,4 +3,4 @@
 
   
 
-<h3>🚀 Website URL : <a href="https://profile.nonlnwza.xyz">profile.nonlnwza.xyz</a></h3>
+<h3>🚀 Website URL : <a href="https://profile.nonlnwza.xyz" target="_blank">profile.nonlnwza.xyz</a></h3>
