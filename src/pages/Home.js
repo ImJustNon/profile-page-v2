@@ -26,7 +26,7 @@ function Home(){
                         <h1 className="text-lg font-bold"><i className="fa-solid fa-code"></i> | {"Dev. Stacks"}</h1>
                         <ul>
                             <li className="py-2 text-sm font-thin">▪ Programming languages: JavaScript, HTML, CSS, SQL, JSX, Python, C++, EJS</li>
-                            <li className="py-2 text-sm font-thin">▪ Frameworks: React.js, Node.js, Discord.js, Bootstrap, TailwindCSS</li>
+                            <li className="py-2 text-sm font-thin">▪ Frameworks: Express.js, React.js, Node.js, Discord.js, Bootstrap, TailwindCSS</li>
                             <li className="py-2 text-sm font-thin">▪ Tools: Git</li>
                             <li className="py-2 text-sm font-thin">▪ IDEs: Visual Studio Code</li>
                             <li className="py-2 text-sm font-thin">▪ Etc: null</li>

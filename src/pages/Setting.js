@@ -3,13 +3,16 @@ import { useEffect, useState } from "react";
 
 function Setting(){
     // set get value from localstorage
+    const [defaultParticlesValue, setDefaultParticlesValue] = useState(null);
+
     useEffect(() => {
         const enableParticles = localStorage.getItem("enable_particles");
-
-        document.getElementById("switch_particles").checked = enableParticles === "true" ? true : false;
+        
+        setTimeout(() =>{
+            setDefaultParticlesValue(enableParticles === "true" ? true : false);
+        }, 250);
     }, []);
 
-    
     function handleSwitch(option, value){
         if(option === "particles"){
             localStorage.setItem("enable_particles", value);
@@ -28,7 +31,7 @@ function Setting(){
                             <div className="card-body items-center text-center">
                                 <h2 className="card-title">Enable Particles Background</h2>
                                 <div className="card-actions justify-end">
-                                    <input type="checkbox" id="switch_particles" onChange={(e) => handleSwitch("particles", e.target.checked)} className="toggle toggle-success toggle-lg"/>
+                                    <input type="checkbox" defaultChecked={defaultParticlesValue} onClick={(event) => handleSwitch("particles", event.target.checked)} className="toggle toggle-success toggle-lg"/>
                                 </div>
                             </div>
                         </div>

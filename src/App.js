@@ -18,20 +18,21 @@ import Setting from './pages/Setting';
 
 function App() {
 	const { pathname } = useLocation();
-	const [enableParticles, setEnableParticles] = useState(false);
+	const [enableParticlesState, setEnableParticlesState] = useState(false);
 
+	
 	useEffect(() =>{
 		const enableParticles = localStorage.getItem("enable_particles");
-		setEnableParticles(enableParticles === "true" ? true : false);
+		setEnableParticlesState(enableParticles === "true" ? true : false);
 	}, []);
 
 	return (
 		<>	
-			{!enableParticles ? <></> : <Particle />} {/* not load Particles js if in mobile device <it take resource too much :) > */}
+			{!enableParticlesState ? <></> : <Particle />} {/* not load Particles js if in mobile device <it take resource too much :) > */}
 
-			<SettingPageButton />
+			{/* <SettingPageButton /> */}
 			<div className='container mx-auto'>
-				<div className='mt-14 mx-auto w-[30rem] md:w-[45rem] noselect'>
+				<div className='mt-24 mx-auto w-[30rem] md:w-[45rem] noselect'>
 					<Profile />
 					<AnimatePresence wait>
 						<motion.div 

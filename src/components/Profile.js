@@ -39,11 +39,11 @@ function Profile(){
 			<div className="hero glass rounded-2xl text-center md:text-start text-black">
 				<div className="hero-content flex-col md:flex-row">
 					{isLoaded ? 
-						<div className="w-2/3">
+						<div className="h-80 w-2/3 md:h-auto">
 							<img src={githubProfileURL} className="w-full rounded-lg shadow-2xl animate__animated animate__fadeIn" />
 						</div>
 						:
-						<div className="w-2/3 text-center">
+						<div className="h-80 w-2/3 text-center md:h-auto">
 							<span className="loading loading-spinner loading-lg"></span>
 						</div>
 					}
@@ -55,6 +55,7 @@ function Profile(){
 							<Link to={"/"}    className={path === "/" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-house"></i> /Home</Link>
 							<Link to={"/project"} className={path === "/project" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-code"></i> /Project</Link>
 							<Link to={"/social"}  className={path === "/social" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
+							<Link to={"/setting"}  className={path === "/setting" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-gear "></i></Link>
 						</div>
 					</div>
 				</div>

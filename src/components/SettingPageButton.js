@@ -15,7 +15,7 @@ function SettingPageButton(){
     }, [pathname]);
 
     return(
-        <div style={{}} className="text-end m-1">
+        <div style={{}} className="text-end m-1 text-black container ml-auto">
             <Link to={"/setting"} className={`btn btn-ghost ${isSettingButtonActive ? "btn-active" : ""}`}><i className="fa-solid fa-gear fa-2xl"></i></Link>
         </div>
     );
