@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 
-function Setting(){
+function Setting(props){
     // set get value from localstorage
     const [defaultParticlesValue, setDefaultParticlesValue] = useState(null);
 
@@ -16,6 +16,7 @@ function Setting(){
     function handleSwitch(option, value){
         if(option === "particles"){
             localStorage.setItem("enable_particles", value);
+            props.setEnableParticlesState(value);
         }
     }
 
