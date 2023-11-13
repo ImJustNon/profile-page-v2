@@ -5,26 +5,10 @@ import { config } from "../config/config";
 function Profile(){
 	const { pathname } = useLocation();
 
-	const [path, setPath] = useState("");
 	const [githubProfileURL, setGithubProfileURL] = useState("");
 	const [githubInfo, setGithubInfo] = useState({});
 	const [isLoaded, setIsLoaded] = useState(false);
 
-	useEffect(() =>{
-		setPath(pathname);
-
-		switch(pathname){
-			case "/":
-				document.title = `Not._Non | Home`;
-			break;
-			case "/project":
-				document.title = `Not._Non | Project`;
-			break;
-			case "/social":
-				document.title = `Not._Non | Social`;
-			break;
-		}
-	}, [pathname]);
 
 	useEffect(() =>{
 		fetch(`https://api.github.com/users/${config.api.github.username}`).then(response => response.json()).then(response =>{
@@ -52,10 +36,10 @@ function Profile(){
 						<p className="py-3">I call myself a Dev. But I hate code. LOL.</p>
 						<p className="py-3">Currently studying at the Vocational Certificate at the Science-Based Technology Vocational College (Chonburi). Information Technology branch.</p>
 						<div className="text-center font-bold">
-							<Link to={"/"}    className={path === "/" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-house"></i> /Home</Link>
-							<Link to={"/project"} className={path === "/project" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-code"></i> /Project</Link>
-							<Link to={"/social"}  className={path === "/social" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
-							<Link to={"/setting"}  className={path === "/setting" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-gear "></i></Link>
+							<Link to={"/"}    className={pathname === "/" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-house"></i> /Home</Link>
+							<Link to={"/project"} className={pathname === "/project" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-code"></i> /Project</Link>
+							<Link to={"/social"}  className={pathname === "/social" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
+							<Link to={"/setting"}  className={pathname === "/setting" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-gear "></i></Link>
 						</div>
 					</div>
 				</div>

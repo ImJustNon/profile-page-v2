@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter, Routes, Route, redirect } from "react-router-dom";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { config } from './config/config';
 import Home from './pages/Home';
 import Profile from './components/Profile';
@@ -15,16 +15,37 @@ import Socials from './pages/Social';
 import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
 import SettingPageButton from './components/SettingPageButton';
 import Setting from './pages/Setting';
+import { pageTitleChoices } from "./utilities/pageTitleChoices";
 
 function App() {
 	const { pathname } = useLocation();
 	const [enableParticlesState, setEnableParticlesState] = useState(false);
 
+	useEffect(() =>{
+		document.title = pageTitleChoices(pathname);
+	}, [pathname]);
+
+	useEffect(() =>{
+		document.addEventListener('visibilitychange', () =>{
+			const visibilityState = document.visibilityState;
+			if(visibilityState === "visible"){
+				document.title = "o(*^▽^*)┛ Welcome Back! ";
+				setTimeout(() =>{
+					document.title = pageTitleChoices(window.location.pathname);
+				}, 1000);
+			}
+			else {
+				document.title = `(っ °Д °;)っ Noooooo!`;
+			}
+		});
+	}, []);
 	
+	// load data from localstorage and then set to state
 	useEffect(() =>{
 		const enableParticles = localStorage.getItem("enable_particles");
 		setEnableParticlesState(enableParticles === "true" ? true : false);
 	}, []);
+
 
 	return (
 		<>	
