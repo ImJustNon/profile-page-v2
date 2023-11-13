@@ -6,6 +6,7 @@ function Profile(){
 	const { pathname } = useLocation();
 
 	const [githubProfileURL, setGithubProfileURL] = useState("");
+	const [githubProfileUserName, setGithubProfileUserName] = useState("");
 	const [githubInfo, setGithubInfo] = useState({});
 	const [isLoaded, setIsLoaded] = useState(false);
 
@@ -13,6 +14,7 @@ function Profile(){
 	useEffect(() =>{
 		fetch(`https://api.github.com/users/${config.api.github.username}`).then(response => response.json()).then(response =>{
 			setGithubProfileURL(response.avatar_url);
+			setGithubProfileUserName(response.name);
 			setGithubInfo(response);
 			setTimeout(() => setIsLoaded(true), 1500);
 		});
@@ -32,14 +34,22 @@ function Profile(){
 						</div>
 					}
 					<div>
-						<h1 className="text-2xl font-bold"><a href="https://github.com/ImJustNon" target="_blank">{"< Not._Non />"}</a></h1>
+						<h1 className={`text-2xl font-semibold `}>
+							{isLoaded ? 
+								<a className="animate__animated animate__fadeIn" href="https://github.com/ImJustNon" target="_blank">{`< ${githubProfileUserName} />`}</a>
+								: 
+								<div className="text-center md:w-44">
+									<span className="loading loading-spinner loading-md"></span>
+								</div>
+							}
+						</h1>
 						<p className="py-3">I call myself a Dev. But I hate code. LOL.</p>
 						<p className="py-3">Currently studying at the Vocational Certificate at the Science-Based Technology Vocational College (Chonburi). Information Technology branch.</p>
 						<div className="text-center font-bold">
-							<Link to={"/"}    className={pathname === "/" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-house"></i> /Home</Link>
+							<Link to={"/"} className={pathname === "/" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-house"></i> /Home</Link>
 							<Link to={"/project"} className={pathname === "/project" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-code"></i> /Project</Link>
-							<Link to={"/social"}  className={pathname === "/social" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
-							<Link to={"/setting"}  className={pathname === "/setting" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-gear "></i></Link>
+							<Link to={"/social"} className={pathname === "/social" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
+							<Link to={"/setting"} className={pathname === "/setting" ? "mr-1 btn btn-ghost btn-active" : "mr-1 btn btn-ghost"}><i className="fa-solid fa-gear "></i></Link>
 						</div>
 					</div>
 				</div>

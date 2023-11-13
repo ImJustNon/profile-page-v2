@@ -1,19 +1,19 @@
 export const pageTitleChoices = (path) =>{
     let title = "";
     if(path === "/"){
-        title = `Not._Non | Home`;
+        title = `NOr._Nor | Home`;
     }
     else if(path === "/project"){
-        title = `Not._Non | Project`;
+        title = `NOr._Nor | Project`;
     }
     else if(path === "/social"){
-        title = `Not._Non | Social`;
+        title = `NOr._Nor | Social`;
     }
     else if(path === "/setting"){
-        title = `Not._Non | Setting`;
+        title = `NOr._Nor | Setting`;
     }
     else{
-        title = `Not._Non | 404 NotFound`;
+        title = `NOr._Nor | 404 NotFound`;
     }
 	return title;
 }

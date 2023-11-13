@@ -16,6 +16,7 @@ import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detec
 import SettingPageButton from './components/SettingPageButton';
 import Setting from './pages/Setting';
 import { pageTitleChoices } from "./utilities/pageTitleChoices";
+import { wait } from './utilities/wait';
 
 function App() {
 	const { pathname } = useLocation();
@@ -32,7 +33,7 @@ function App() {
 				document.title = "o(*^▽^*)┛ Welcome Back! ";
 				setTimeout(() =>{
 					document.title = pageTitleChoices(window.location.pathname);
-				}, 1000);
+				}, 2 * 1000);
 			}
 			else {
 				document.title = `(っ °Д °;)っ Noooooo!`;
