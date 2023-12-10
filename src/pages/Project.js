@@ -29,9 +29,9 @@ function Project(){
 
     return(
         <>
-            <div className="hero glass my-10 rounded-2xl text-center text-black">
-                <div className="hero-content">
-                    <div className="py-2 px-2">
+            <div className="hero glass my-10 w-full rounded-2xl text-center text-black">
+                <div className="hero-content w-full">
+                    <div className="py-2 px-2 w-full">
                         <h1 className='text-2xl text-center mb-5'>{"<My Personal Projects />"}</h1>
                         <hr className='my-5'/>
                         <div className="join grid grid-cols-3 mb-10">
@@ -41,22 +41,26 @@ function Project(){
                         </div>
 
                         <div className={`${isProjectDataLoading ? "hidden" : ""}`}>
-                            {projects.map((project, i) =>(
-                                <div className="card w-96 glass mb-5 shadow-2xl" key={i}>
-                                    <figure className="px-10 pt-10">
-                                        <img src={project.api.img} alt={`project_image_${i}`} className="rounded-xl" />
-                                    </figure>
-                                    <div className="card-body items-center text-center">
-                                        <h2 className="card-title">{project.title.join("")}</h2>
-                                        <p>{project.description.join("")}</p>
-                                        <div className="card-actions mt-3">
-                                            {project.button.map((button, i) =>(
-                                                <a className="btn btn-neutral font-normal text-white" href={button.url} target='_blank' key={i}><i className="fa-brands fa-github"></i> {button.name}</a>
-                                            ))}
+                            <div className='mx-auto w-full grid grid-cols-1 gap-2 md:grid-cols-2'>
+
+                                {projects.map((project, i) =>(
+                                    <div className="card w-fit glass mb-5 shadow-2xl mx-auto" key={i}>
+                                        <figure className="px-10 pt-10">
+                                            <img src={project.api.img} alt={`project_image_${i}`} className="rounded-xl" />
+                                        </figure>
+                                        <div className="card-body items-center text-center">
+                                            <h2 className="card-title">{project.title.join("")}</h2>
+                                            <p>{project.description.join("")}</p>
+                                            <div className="card-actions mt-3">
+                                                {project.button.map((button, i) =>(
+                                                    <a className="btn btn-neutral font-normal text-white" href={button.url} target='_blank' key={i}><i className="fa-brands fa-github"></i> {button.name}</a>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))}
+
+                            </div>
                         </div>
                         <div className={`${isProjectDataLoading ? "" : "hidden"} mt-16`}>
                             <span className="mx-auto loading loading-dots loading-lg"></span>

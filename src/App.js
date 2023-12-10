@@ -54,7 +54,7 @@ function App() {
 
 			{/* <SettingPageButton /> */}
 			<div className='container mx-auto'>
-				<div className='mt-24 mx-auto w-[30rem] md:w-[45rem] noselect'>
+				<div className='mt-24 mx-auto w-96 md:w-[45rem] noselect'>
 					<Profile />
 					<AnimatePresence wait>
 						<motion.div 
