@@ -21,8 +21,8 @@ function Home(){
     return(
         <>
             <div className="hero glass my-10 rounded-2xl text-start text-black">
-                <div className="hero-content">
-                    <div className="py-5">
+                <div className="hero-content w-full">
+                    <div className="py-5 md:px-10 w-full">
                         <h1 className="text-lg font-bold"><i className="fa-solid fa-code"></i> | {"Dev. Stacks"}</h1>
                         <ul>
                             <li className="py-2 text-sm font-thin">▪ Programming languages: JavaScript, HTML, CSS, SQL, JSX, Python, C++, EJS</li>
@@ -44,18 +44,31 @@ function Home(){
                         <h1 className="text-lg mt-5 font-bold"><i className="fa-brands fa-discord"></i> | {"Discord Status"}</h1>
 
                         {/* Load success and show data */}
-                        <div className={`card card-side glass shadow-2xl mt-3 px-10 py-1 text-center`}>
+                        <div className={`card card-side glass shadow-2xl mt-3 w-80 h-fit px-5 py-1 mx-auto text-center md:w-4/5`}>
                             <figure className='w-40 text-center'>
                                 {isUserStatusLoaded ? 
-                                    <img src={`https://cdn.discordapp.com/avatars/${config.api.lanyard.discordUserId}/${userStatus.data?.discord_user.avatar}`} className='w-2/3 rounded-full animate__animated animate__fadeIn' alt="profile"/>
+                                    <img src={`https://cdn.discordapp.com/avatars/${config.api.lanyard.discordUserId}/${userStatus.data?.discord_user.avatar}`} className='w-3/3 rounded-full animate__animated animate__fadeIn' alt="profile"/>
                                     :
                                     <span className="loading loading-spinner loading-md"></span>
                                 }
                                 
                             </figure>
-                            <div className="card-body">
-                                <h2 className="font-bold text-xl">{isUserStatusLoaded ? <span className='animate__animated animate__fadeIn'>@{userStatus.data?.discord_user.username} #{userStatus.data?.discord_user.discriminator}</span> : <span>&nbsp;</span>}</h2>
-                                <p>{isUserStatusLoaded ? <span className={`animate__animated animate__fadeIn ${userStatus.data?.discord_status === 'online' ? "text-success" : ""}`}>{userStatus.data?.discord_status}</span> : <span>&nbsp;</span>}</p>
+
+                            <div className="card-body w-full">
+                                <h2 className="font-bold text-md md:text-xl">
+                                    {isUserStatusLoaded ? 
+                                        <span className='animate__animated animate__fadeIn'>@{userStatus.data?.discord_user.username} #{userStatus.data?.discord_user.discriminator}</span> 
+                                    :   
+                                        <span>&nbsp;</span>
+                                    }
+                                </h2>
+                                <p>
+                                    {isUserStatusLoaded ? 
+                                        <span className={`animate__animated animate__fadeIn ${userStatus.data?.discord_status === 'online' ? "text-success" : ""}`}>{userStatus.data?.discord_status}</span> 
+                                    : 
+                                        <span>&nbsp;</span>
+                                    }
+                                </p>
                                 {/* <h2 className={`font-bold text-md ${userStatus.data?.activities.length !== 0 ? "" : "hidden"}`}>Activities</h2>
                                 <p>{userStatus.data?.activities.map((activity, i) =>(
                                     <span key={i}>
