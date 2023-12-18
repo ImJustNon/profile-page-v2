@@ -46,10 +46,10 @@ function Profile(){
 						<p className="py-3">I call myself a Dev. But I hate code. LOL.</p>
 						<p className="py-3">Currently studying at the Vocational Certificate at the Science-Based Technology Vocational College (Chonburi). Information Technology branch.</p>
 						<div className="text-center font-bold">
-							<Link to={"/"} className={pathname === "/" ? "mr-1 btn btn-ghost btn-md btn-active" : "mr-1 btn btn-ghost btn-md"}><i className="fa-solid fa-house"></i> /Home</Link>
-							<Link to={"/project"} className={pathname === "/project" ? "mr-1 btn btn-ghost btn-md btn-active" : "mr-1 btn btn-ghost btn-md"}><i className="fa-solid fa-code"></i> /Project</Link>
-							<Link to={"/social"} className={pathname === "/social" ? "mr-1 btn btn-ghost btn-md btn-active" : "mr-1 btn btn-ghost btn-md"}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
-							<Link to={"/setting"} className={pathname === "/setting" ? "mr-1 btn btn-ghost btn-md btn-active" : "mr-1 btn btn-ghost btn-md"}><i className="fa-solid fa-gear "></i></Link>
+							<Link to={"/"} className={pathname === "/" ? "mr-1 btn btn-ghost btn-md  btn-active" : "mr-1 btn btn-ghost btn-md "}><i className="fa-solid fa-house"></i> /Home</Link>
+							<Link to={"/project"} className={pathname === "/project" ? "mr-1 btn btn-ghost btn-md  btn-active" : "mr-1 btn btn-ghost btn-md "}><i className="fa-solid fa-code"></i> /Project</Link>
+							<Link to={"/social"} className={pathname === "/social" ? "mr-1 btn btn-ghost btn-md  btn-active" : "mr-1 btn btn-ghost btn-md "}><i className="fa-solid fa-share-from-square"></i> /Social</Link>
+							<Link to={"/setting"} className={pathname === "/setting" ? "mr-1 btn btn-ghost btn-md hidden md:inline-flex btn-active" : "mr-1 btn btn-ghost btn-md hidden md:inline-flex"}><i className="fa-solid fa-gear "></i></Link>
 						</div>
 					</div>
 				</div>
