@@ -14,8 +14,8 @@ function Project(){
 
     useEffect(() =>{
         setIsProjectDataLoading(true);
-        fetch(`https://me.nonlnwza.xyz/api/get/projects?key=${config.api.nonlnwzaPortfolio.key}&filter=${group[parseInt(p)]}`).then(response => response.json()).then(response =>{
-            if(response.status === "SUCCESS"){
+        fetch(`https://portfolio-api-service.vercel.app/api/v1/projects/bycategory/${group[parseInt(p)]}`).then(response => response.json()).then(response =>{
+            if(response.status === "OK"){
                 console.log(response.data);
                 setProjects(response.data);
                 console.log(`Connected To Nonlnwza Portfolio API : SUCCESS : ${Math.random()}`);
@@ -36,24 +36,23 @@ function Project(){
                         <hr className='my-5'/>
                         <div className="join grid grid-cols-3 mb-10">
                             <Link to={`/project?p=${parseInt(p) - 1}`} className={`join-item btn btn-outline text-black ${parseInt(p) <= 0 ? "btn-disabled" : ""}`}><i className="fa-solid fa-angles-left"></i></Link>
-                            <button className="join-item btn btn-outline text-black">{group[parseInt(p)]}</button>
+                            <button className="join-item btn btn-outline text-black">{config.data.pages.project.displayGroup[group[parseInt(p)]]}</button>
                             <Link to={`/project?p=${parseInt(p) + 1}`} className={`join-item btn btn-outline text-black ${parseInt(p) === group.length - 1 ? "btn-disabled" : ""}`}><i className="fa-solid fa-angles-right"></i></Link>
                         </div>
 
                         <div className={`${isProjectDataLoading ? "hidden" : ""}`}>
-                            <div className='mx-auto w-full grid grid-cols-1 gap-2 md:grid-cols-2'>
-
+                            <div className={`mx-auto w-full grid grid-cols-1 gap-2 ${projects.length == 1 ? "md:grid-cols-1" : "md:grid-cols-2"}`}>
                                 {projects.map((project, i) =>(
                                     <div className="card w-fit glass mb-5 shadow-2xl mx-auto" key={i}>
                                         <figure className="px-10 pt-10">
-                                            <img src={project.api.img} alt={`project_image_${i}`} className="rounded-xl" />
+                                            <img src={project.img} alt={`project_image_${i}`} className="rounded-xl" />
                                         </figure>
                                         <div className="card-body items-center text-center">
                                             <h2 className="card-title">{project.title.join("")}</h2>
                                             <p>{project.description.join("")}</p>
                                             <div className="card-actions mt-3">
-                                                {project.button.map((button, i) =>(
-                                                    <a className="btn btn-neutral font-normal text-white" href={button.url} target='_blank' key={i}><i className="fa-brands fa-github"></i> {button.name}</a>
+                                                {project.links.map((link, i) =>(
+                                                    <a className="btn btn-neutral font-normal text-white" href={link.url} target='_blank' key={i}><i className="fa-brands fa-github"></i> {link.name}</a>
                                                 ))}
                                             </div>
                                         </div>

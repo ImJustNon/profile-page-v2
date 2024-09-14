@@ -75,10 +75,17 @@ export const config = {
             },
             project: {
                 group: [
-                    "m3",
-                    "voc_cert_1",
-                    "voc_cert_2"
+                    "vocational_certificate_3rd_year",
+                    "vocational_certificate_2nd_year",
+                    "vocational_certificate_1st_year",
+                    "proj_m_3"
                 ],
+                displayGroup: {
+                    "vocational_certificate_3rd_year": "Vocational Certificate 3",
+                    "vocational_certificate_2nd_year": "Vocational Certificate 2",
+                    "vocational_certificate_1st_year": "Vocational Certificate 1",
+                    "proj_m_3": "Grade 12"
+                }
             },
         }
     }
