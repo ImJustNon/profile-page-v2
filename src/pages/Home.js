@@ -27,7 +27,7 @@ function Home(){
                         <ul>
                             <li className="py-2 text-sm font-thin">▪ Programming languages: JavaScript, HTML, CSS, SQL, JSX, Python, C++, EJS</li>
                             <li className="py-2 text-sm font-thin">▪ Frameworks: Express.js, React.js, Node.js, Discord.js, Bootstrap, TailwindCSS</li>
-                            <li className="py-2 text-sm font-thin">▪ Tools: Git</li>
+                            <li className="py-2 text-sm font-thin">▪ Tools: Git, Postman, Docker, SourceTree, Filezilla, Plesk, Figma</li>
                             <li className="py-2 text-sm font-thin">▪ IDEs: Visual Studio Code</li>
                             <li className="py-2 text-sm font-thin">▪ Etc: null</li>
                         </ul>
@@ -35,10 +35,11 @@ function Home(){
                         <h1 className="text-lg mt-5 font-bold">🥰 | {"Personal Information"}</h1>
                         <ul>
                             <li className="py-2 text-sm font-thin">▪ Live in : Samut Prakan, Thailand</li>
-                            <li className="py-2 text-sm font-thin">▪ Study At : Science-Based Technology Vocational College (Chonburi)</li>
-                            <li className="py-2 text-sm font-thin">▪ Field of Study : Information Technology (IT)</li>
+                            <li className="py-2 text-sm font-thin">▪ Studying At : King Mongkut's University of Technology Thonburi (KMUTT) (Bangmod)</li>
+                            <li className="py-2 text-sm font-thin">▪ Faculty : Faculty of Engineering (VIDVA)</li>
+                            <li className="py-2 text-sm font-thin">▪ Department : Computer Engineering (CPE)</li>
                             <li className="py-2 text-sm font-thin">▪ Hobbies: Listening to music, watching anime, coding, sleeping</li>
-                            <li className="py-2 text-sm font-thin">▪ Fav Anime : 86, Spy X Family, Bloom into You, YourName ETC.</li>
+                            <li className="py-2 text-sm font-thin">▪ Fav Anime : 86, Spy X Family, Bloom into You, YourName etc.</li>
                         </ul>
                         
                         <h1 className="text-lg mt-5 font-bold"><i className="fa-brands fa-discord"></i> | {"Discord Status"}</h1>
