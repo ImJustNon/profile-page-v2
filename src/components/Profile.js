@@ -44,7 +44,7 @@ function Profile(){
 							}
 						</h1>
 						<p className="py-3">I call myself a Dev. But I hate code. LOL.</p>
-						<p className="py-3">Currently studying at the Vocational Certificate at the Science-Based Technology Vocational College (Chonburi). Information Technology branch.</p>
+						<p className="py-3">Currently studying for a Bachelor's degree in Computer Engineering at King Mongkut's University of Technology Thonburi. (KMUTT) (Bangmod)</p>
 						<div className="text-center font-bold">
 							<Link to={"/"} className={pathname === "/" ? "mr-1 btn btn-ghost btn-md  btn-active" : "mr-1 btn btn-ghost btn-md "}><i className="fa-solid fa-house"></i> /Home</Link>
 							<Link to={"/project"} className={pathname === "/project" ? "mr-1 btn btn-ghost btn-md  btn-active" : "mr-1 btn btn-ghost btn-md "}><i className="fa-solid fa-code"></i> /Project</Link>
