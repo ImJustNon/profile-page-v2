@@ -47,10 +47,10 @@ const Particle = () => {
                 },
                 particles: {
                     color: {
-                        value: "#ffffff",
+                        value: "#fac7d4",
                     },
                     links: {
-                        color: "#ffffff",
+                        color: "#bc9d9c",
                         distance: 150,
                         enable: true,
                         opacity: 0.5,
@@ -60,7 +60,7 @@ const Particle = () => {
                         enable: true,
                     },
                     move: {
-                        direction: "top",
+                        direction: "bottom",
                         enable: true,
                         /*outModes: {
                             default: "bounce",

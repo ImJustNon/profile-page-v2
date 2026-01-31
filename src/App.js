@@ -63,16 +63,25 @@ function App() {
 							animate="animateState"
 							exit="exitState"
 							transition={{
-								duration: 0.3,
+								duration: 0.6,
 							}}
 							variants={{
 								initialState: {
-									opacity: 0, transform: "translateY(150px)",
+									filter: "blur(5px)",
+									borderRadius: 0,
+									backdropFilter: "blur(20px)",
+									opacity: 0, // transform: "translateY(150px)",
 								},
 								animateState: {
-									opacity: 1, transform: 0,
+									filter: "blur(0px)",
+									borderRadius: 25,
+									backdropFilter: "blur(20px)",
+									opacity: 1, // transform: 0,
 								},
-								exitState: {},
+								// exitState: {
+								// 	filter: "blur(12px)",
+								// 	opacity: 0,
+								// },
 							}}
 						>
 							<Routes>

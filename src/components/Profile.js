@@ -22,7 +22,7 @@ function Profile(){
 
     return(
 		<>
-			<div className="hero glass rounded-2xl text-center md:text-start text-black">
+			<div className="hero backdrop-blur-2xl rounded-2xl text-center md:text-start text-black">
 				<div className="hero-content p-3 w-full flex-col md:flex-row">
 					{isLoaded ? 
 						<div className="h-fit w-2/3 md:h-auto">
@@ -44,7 +44,7 @@ function Profile(){
 							}
 						</h1>
 						<p className="py-3">I call myself a Dev. But I hate code. LOL.</p>
-						<p className="py-3">Currently studying for a Bachelor's degree in Computer Engineering at King Mongkut's University of Technology Thonburi. (KMUTT) (Bangmod)</p>
+						<p className="py-3">Currently studying for a Bachelor's degree in Computer Engineering at King Mongkut's University of Technology Thonburi. (KMUTT)</p>
 						<div className="text-center font-bold">
 							<Link to={"/"} className={pathname === "/" ? "mr-1 btn btn-ghost btn-md  btn-active" : "mr-1 btn btn-ghost btn-md "}><i className="fa-solid fa-house"></i> /Home</Link>
 							<Link to={"/project"} className={pathname === "/project" ? "mr-1 btn btn-ghost btn-md  btn-active" : "mr-1 btn btn-ghost btn-md "}><i className="fa-solid fa-code"></i> /Project</Link>

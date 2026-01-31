@@ -22,7 +22,7 @@ function Socials(){
 
     return(
         <>
-            <div className="hero glass mt-10 rounded-2xl text-center text-black">
+            <div className="hero mt-10 rounded-2xl text-center text-black">
                 <div className="hero-content w-full">
                     <div className="py-2 px-2 w-full">
                         <h1 className='text-2xl text-center mb-5'>{"<My Social Accounts />"}</h1>

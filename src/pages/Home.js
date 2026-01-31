@@ -20,7 +20,7 @@ function Home(){
     
     return(
         <>
-            <div className="hero glass my-10 rounded-2xl text-start text-black">
+            <div className="hero my-10 rounded-2xl  text-start text-black">
                 <div className="hero-content w-full">
                     <div className="py-5 md:px-10 w-full">
                         <h1 className="text-lg font-bold"><i className="fa-solid fa-code"></i> | {"Dev. Stacks"}</h1>
@@ -42,7 +42,7 @@ function Home(){
                             <li className="py-2 text-sm font-thin">▪ Fav Anime : 86, Spy X Family, Bloom into You, YourName etc.</li>
                         </ul>
                         
-                        <h1 className="text-lg mt-5 font-bold"><i className="fa-brands fa-discord"></i> | {"Discord Status"}</h1>
+                        <h1 className="text-lg mt-5 font-bold"><i className="fa-brands fa-discord"></i> | {"Discord"}</h1>
 
                         {/* Load success and show data */}
                         <div className={`card card-side glass shadow-2xl mt-3 w-80 h-fit px-5 py-1 mx-auto text-center md:w-4/5`}>

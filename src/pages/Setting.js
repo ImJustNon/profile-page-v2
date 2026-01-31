@@ -22,7 +22,7 @@ function Setting(props){
 
     return(
         <>
-            <div className="hero glass mt-10 rounded-2xl text-center text-black">
+            <div className="hero mt-10 rounded-2xl text-center text-black">
                 <div className="hero-content">
                     <div className="py-5">
                         <h1 className='text-2xl text-center mb-5'>{"<Settings />"}</h1>
