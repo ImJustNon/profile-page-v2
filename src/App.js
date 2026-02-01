@@ -44,7 +44,8 @@ function App() {
 	// load data from localstorage and then set to state
 	useEffect(() =>{
 		const enableParticles = localStorage.getItem("enable_particles");
-		setEnableParticlesState(enableParticles === "true" ? true : false);
+		if(enableParticles !== null) setEnableParticlesState(enableParticles === "true" ? true : false);
+		else setEnableParticlesState(true);
 	}, []);
 
 
@@ -67,16 +68,23 @@ function App() {
 							}}
 							variants={{
 								initialState: {
-									filter: "blur(5px)",
+									filter: "blur(8px)",
+									opacity: 0,
+									scale: 1,
 									borderRadius: 0,
-									backdropFilter: "blur(20px)",
-									opacity: 0, // transform: "translateY(150px)",
+									boxShadow: "0 0 0 rgba(0,0,0,0)",
+									backdropFilter: "blur(0px)",
+									WebkitBackdropFilter: "blur(0px)",
+									willChange: "filter, opacity, transform",
 								},
 								animateState: {
 									filter: "blur(0px)",
-									borderRadius: 25,
+									opacity: 1,
+									scale: 1,
+									borderRadius: 15,
+									boxShadow: "0 30px 80px rgba(0,0,0,0.25)",
 									backdropFilter: "blur(20px)",
-									opacity: 1, // transform: 0,
+									WebkitBackdropFilter: "blur(20px)",
 								},
 								// exitState: {
 								// 	filter: "blur(12px)",

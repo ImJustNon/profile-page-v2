@@ -22,7 +22,7 @@ function Profile(){
 
     return(
 		<>
-			<div className="hero backdrop-blur-2xl rounded-2xl text-center md:text-start text-black">
+			<div className="hero backdrop-blur-2xl rounded-2xl text-center md:text-start text-black shadow-2xl">
 				<div className="hero-content p-3 w-full flex-col md:flex-row">
 					{isLoaded ? 
 						<div className="h-fit w-2/3 md:h-auto">
